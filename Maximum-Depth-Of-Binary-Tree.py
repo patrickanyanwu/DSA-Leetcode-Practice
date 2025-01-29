@@ -1,6 +1,7 @@
 """Run DFS and increment a count variable for every recursive call,
 if we have hit a leaf node (the current node has no left or right) we calculate our max and we decrement our count so that the next node to traverse can find a new max if there is.
-We manipulate our count and max count variables by using nonlocal (allows us to modify a variable outside of the function call). O(n) time O(1) space."""
+We manipulate our count and max count variables by using nonlocal (allows us to modify a variable outside of the function call). 
+O(n) time O(1) space."""
 
 # Definition for a binary tree node.
 # class TreeNode:
