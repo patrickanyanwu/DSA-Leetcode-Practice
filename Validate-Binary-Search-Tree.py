@@ -1,5 +1,6 @@
 """We run recursive DFS and we have 2 bounds a left and right left < curr.val < right.
-As we go left we know the node has to be less than its parent so we update our right bound and if we go right we update our left bound as the node needs to be greater than its parent. """
+As we go left we know the node has to be less than its parent so we update our right bound and if we go right we update our left bound as the node needs to be greater than its parent.
+O(n) time, O(1) space."""
 
 # Definition for a binary tree node.
 # class TreeNode:
