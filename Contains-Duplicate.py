@@ -1,11 +1,7 @@
 """Thought Process:
-Use set to add numbers in the array, check if a number is already in the set, and return True if so. O(n) time O(n) space
+We check if the set of nums is a different size to the original nums array, if its not that means there is a duplicate as sets remove duplicates.
+O(n) time O(n) space
 """
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
-        set1 = set()
-        for i in nums:
-            if i in set1:
-                return True
-            set1.add(i)
-        return False
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        return len(set(nums)) != len(nums)
