@@ -1,7 +1,8 @@
-"""Use BFS through graph and we use a hashmap to map each old node to its copy, we make a new node for each node in the original graph.
-We then append all neighbours of the original graph node to our copy node.
-
-O(V + E) time, O(V) space"""
+"""
+    Use BFS through graph and we use a hashmap to map each old node to its copy,
+    We then append all neighbours of the original graph node to our copy node we only add nodes to the q if we have not processed them already.
+    O(V + E) time, O(V) space.
+"""
 
 
 """
