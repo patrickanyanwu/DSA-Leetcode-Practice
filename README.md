@@ -22,9 +22,9 @@
   <li>Sliding Window</li>
   <li>Two Pointers</li>
   <li>Recursion</li>
-  <li>Breath First Search</li>
-  <li>Depth First Search</li>
+  <li>Breath First Search (Through Graphs, Trees, Matrices)</li>
+  <li>Depth First Search (Through Graphs, Trees, Matrices)</li>
   <li>Sorting Algorithms</li>
   <li>Backtracking</li>
-  <li>Dijkstra's</li>
+  <li>Dijkstra's (Shortest Pathfinding through Graphs, Matrices)</li>
 </ul>
