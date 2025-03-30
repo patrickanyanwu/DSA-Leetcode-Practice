@@ -2,6 +2,7 @@
   Loop through each word 2 at a time and compare against the conditions given, if any conditions are not met we return the empty string immediately.
   Otherwise we find the first differing character for each word and add it to our adjacency list as mapping one before another lexicographically.
   Afterward we run topological sort using dfs to get our return order of letters, if a cycle is detected we return the empty string also as it is not validlly sorted.
+  O(N + V + E) time and O(V + E) space.
 """
 
 class Solution:
