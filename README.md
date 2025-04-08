@@ -26,6 +26,7 @@
   <li>Depth First Search (Through Graphs, Trees, Matrices)</li>
   <li>Sorting Algorithms</li>
   <li>Backtracking</li>
+  <li>Greedy</li>
   <li>Dijkstra's (Shortest Pathfinding through Graphs, Matrices)</li>
   <li>Dynamic Programming</li>
 </ul>
