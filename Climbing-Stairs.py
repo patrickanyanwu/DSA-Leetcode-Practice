@@ -1,6 +1,7 @@
 """
-  Start from the final stair, count the sum of the amount of ways i can reach the top from the previous 2 steps which will be the amount of ways i can get up from the previous step.
-  This way we are guaranteed the number of ways to get to the nth step.
+  Bottom up DP approach, there is only 1 way to reach step 0 and 1,
+  now the num of ways to get to the second step is the sum of the num of ways to get to the previous 2 steps (if we come from the previouis step or we come from the previous previous step),
+  process repeats n times.
   O(n) time O(1) space.
 """
 
