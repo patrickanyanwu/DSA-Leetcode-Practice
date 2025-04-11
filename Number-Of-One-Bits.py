@@ -11,3 +11,16 @@ class Solution:
             res += n % 2
             n >>= 1
         return res
+
+"""
+  This solution is more efficient as we dont process unnecesary 0's.
+  It works by anding the number with the number minus 1 and what this does it it removes a 1 every time from the number,
+  O(1) time O(1) space
+"""
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        res = 0
+        while n:
+            n &= n - 1
+            res += 1
+        return res
