@@ -2,7 +2,8 @@
   Run a BFS through the matrix while keeping track of how many steps we took to get to every cell,
   directions array made for easy acces to each next possible direction.
   then if we ever hit an exit (a border) we return the amount of steps it took.
-  Seen set used to avoid revisiting cells.
+  Seen set used to avoid revisiting cells and we have a check if were at a border and we are at the entrance cell (0 steps have been taken) we continue.
+  If exit never found we return -1.
   O(m * n) time O(m * n) space.
 """
 class Solution:
