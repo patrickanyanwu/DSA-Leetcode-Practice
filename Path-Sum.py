@@ -23,5 +23,6 @@ class Solution:
             if not curr.left and not curr.right:
                 if summ + curr.val == targetSum:
                     res[0] = True
+                    return
         dfs(root, 0)
         return res[0]
