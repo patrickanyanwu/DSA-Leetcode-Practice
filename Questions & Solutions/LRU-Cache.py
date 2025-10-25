@@ -1,8 +1,11 @@
 """
-  We use 2 data structures, a doubly linked list and a hashmap which maps key to what node in the doubly linked list holds the value.
-  Every time we 'put' if the key is already in the cache we firstly remove it from the chache, then we create a new node and insert the node to the
-  end of the list. If the list is over capacity we remove the lists tail which is the Least Recently Used item.
-  On every get we just remove the node with that key and insert the node at the end of the list every time by updating pointers/
+    We use a hashmap and a doubly linked list (DLL),
+    the hashmap with have key being the key given for an item
+    and the value being its node in the DLL.
+    We use the DLL to keep an order of least to most recently used
+    by whenever an item is inserted or retrieved it is moved to the front of the DLL
+    to be the most recently used. Now when we reach capacity we remove whatever
+    is at the beginnning of the DLL as that is the least recently used
 """
 
 class Node:
@@ -11,6 +14,8 @@ class Node:
         self.value = value
         self.prev = None
         self.next = None
+
+
 class LRUCache:
 
     def __init__(self, capacity: int):
