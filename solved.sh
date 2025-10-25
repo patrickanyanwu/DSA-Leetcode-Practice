@@ -1,3 +1,5 @@
+set -e  # Exit on error
+
 git add . 
-git commit -m "$1" 
+git commit -m "Solved: $1" 
 git push
