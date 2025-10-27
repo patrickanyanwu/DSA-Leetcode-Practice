@@ -13,7 +13,5 @@ class Solution:
         while n:
             res += str((n % 2) & 1)
             n >>= 1
-        while True:
-            if len(res) == 32:
-                return int(res, 2)
-            res += "0"
+        res += ("0" * (32 - len(res)))
+        return int(res, 2)
