@@ -4,7 +4,7 @@
     with all bits set by generating a string of
     1s with the same length and converting it
     back to an integer.
-    O(log n) time O(log n) space
+    O(1) time O(1) space
 """
 
 class Solution:
