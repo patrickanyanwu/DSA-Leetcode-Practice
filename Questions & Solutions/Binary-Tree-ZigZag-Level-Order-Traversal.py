@@ -16,7 +16,7 @@ appendleft to build the reversed order
 efficiently without extra reversal steps.
 O(n) time O(w) space
 """
-
+    
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
