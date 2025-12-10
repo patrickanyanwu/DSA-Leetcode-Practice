@@ -18,7 +18,7 @@ def stable_counting_sort(arr):
     for num in arr:
         count[num] += 1
 
-
+    [0, 1, 2, 1]
     for i in range(1, len(count)):
         count[i] += count[i - 1]
 
