@@ -1,16 +1,16 @@
+"""
+    I implemented string multiplication by simulating the grade school
+    multiplication algorithm. I first handle the zero case, then create a
+    result array of length n+m to store intermediate sums. I iterate from
+    right to left through both numbers, multiplying each digit pair and
+    adding to the appropriate position in the result array. I handle carries
+    by storing the remainder at the current position and adding the quotient
+    to the previous position. Finally, I convert the array to a string while
+    skipping leading zeros. This mimics manual multiplication digit by digit.
+    O(n × m) time O(n + m) space
+"""
 class Solution:
     def multiply(self, num1: str, num2: str) -> str:
-        """
-        I implemented string multiplication by simulating the grade school
-        multiplication algorithm. I first handle the zero case, then create a
-        result array of length n+m to store intermediate sums. I iterate from
-        right to left through both numbers, multiplying each digit pair and
-        adding to the appropriate position in the result array. I handle carries
-        by storing the remainder at the current position and adding the quotient
-        to the previous position. Finally, I convert the array to a string while
-        skipping leading zeros. This mimics manual multiplication digit by digit.
-        O(n × m) time O(n + m) space
-        """
         if num1 == "0" or num2 == "0":
             return "0"
         n, m = len(num1), len(num2)
