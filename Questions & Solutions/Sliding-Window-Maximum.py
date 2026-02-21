@@ -1,20 +1,29 @@
 """
-  Use a max heap to track the maximum element in the current sliding window.
-  Store elements as (-value, index) in the heap to simulate max heap using min heap.
-  For each position, push the current element to the heap.
-  Once we have a complete window (i >= k-1), remove elements from the heap that are outside the window (index <= i-k).
-  The top of the heap is always the maximum in the current window.
-  O(n log n) time, O(n) space.
+  Use a monotonic decreasing deque to track indices of potential maximum elements.
+  The deque stores indices in decreasing order of their values.
+  For each new element, remove smaller elements from the back (they can never be maximum).
+  Remove indices outside the current window from the front.
+  The front of the deque always contains the index of the maximum element in the current window.
+  O(n) time, O(k) space.
 """
 
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        heap = []
         output = []
-        for i in range(len(nums)):
-            heapq.heappush(heap, (-nums[i], i))
-            if i >= k - 1:
-                while heap[0][1] <= i - k:
-                    heapq.heappop(heap)
-                output.append(-heap[0][0])
+        q = deque()  # index
+        l = r = 0
+
+        while r < len(nums):
+            while q and nums[q[-1]] < nums[r]:
+                q.pop()
+            q.append(r)
+
+            if l > q[0]:
+                q.popleft()
+
+            if (r + 1) >= k:
+                output.append(nums[q[0]])
+                l += 1
+            r += 1
+
         return output
