@@ -1,0 +1,28 @@
+"""
+Use multi-source BFS seeded from all treasure chests (0s) simultaneously instead of running BFS from each land cell individually.
+First pass collects every chest position into the queue at once.
+BFS then expands outward level by level, writing the shortest distance into each reachable INF cell as grid[r][c] + 1.
+Because all sources start together, the first time BFS reaches a cell is guaranteed to be the shortest distance to any chest.
+Walls (-1) and already-filled cells are naturally skipped by the INF check.
+O(n * m) time and O(n * m) space since each cell is enqueued at most once.
+"""
+
+class Solution:
+    def islandsAndTreasure(self, grid: List[List[int]]) -> None:
+        n, m = len(grid), len(grid[0])
+        INF = 2147483647
+        q = deque()
+
+        # seed queue with all treasure chests at once
+        for r in range(n):
+            for c in range(m):
+                if grid[r][c] == 0:
+                    q.append((r, c))
+
+        while q:
+            r, c = q.popleft()
+            for dr, dc in [(1,0),(-1,0),(0,1),(0,-1)]:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < n and 0 <= nc < m and grid[nr][nc] == INF:
+                    grid[nr][nc] = grid[r][c] + 1
+                    q.append((nr, nc))
