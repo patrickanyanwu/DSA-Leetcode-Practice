@@ -1,0 +1,32 @@
+"""
+Use backtracking to explore all ways to partition the string such that every substring is a palindrome.
+At each position i, try every possible end index j and check if s[i:j+1] is a palindrome using two pointers.
+If it is, add it to the current partition and recurse from j+1.
+When i reaches the end of the string, the current partition is a valid answer — append a copy to results.
+Backtrack by popping the last added substring before trying the next end index.
+O(n * 2^n) time since there are 2^n possible partitions and each palindrome check is O(n), O(n) space for the recursion stack and current partition.
+"""
+
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        res, sol = [], []
+
+        def isPalindrome(l, r):
+            while l <= r:
+                if s[l] != s[r]:
+                    return False
+                l += 1
+                r -= 1
+            return True
+        def dfs(i):
+            if i == len(s):
+                res.append(sol[:])
+                return
+            for j in range(i, len(s)):
+                if isPalindrome(i, j):
+                    sol.append(s[i:j+1])
+                    dfs(j + 1)
+                    sol.pop()
+
+        dfs(0)
+        return res
